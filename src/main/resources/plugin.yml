@@ -1,0 +1,17 @@
+name: ArdaCraftingTables
+version: 2.0
+main: de.ardania.urutar.ArdaCraftingTables.Main
+api-version: 1.14
+author: Urutar
+description: Adds special crafting tables
+
+commands:
+  ArdaCraftingTables:
+    description: Help Page
+    usage: /<command> help
+    permission: ArdaCraftingTables.commands
+
+permissions:
+  ArdaCraftingTables.commands:
+    description: Allows ArdaCraftingTables command
+    default: op

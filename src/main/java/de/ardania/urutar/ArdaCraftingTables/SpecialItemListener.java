@@ -169,7 +169,7 @@ public class SpecialItemListener implements Listener {
             player.openInventory(player.getEnderChest());
             event.setCancelled(true);
             return;
-        } else if (material.equals(Material.SHULKER_BOX) &&
+        } else if (isShulkerBox(material) &&
                 displayName.endsWith("Taschenshulker")) {
             boolean opened = openVirtualShulker(player, item, meta, displayName);
             if(opened) {
@@ -205,6 +205,31 @@ public class SpecialItemListener implements Listener {
                 displayName.endsWith("Taschenkartentisch")) {
             containerProvider.openCartographyTable(player);
             event.setCancelled(true);
+        }
+    }
+
+    private boolean isShulkerBox(Material item) {
+        switch (item) {
+            case SHULKER_BOX:
+            case WHITE_SHULKER_BOX:
+            case LIGHT_GRAY_SHULKER_BOX:
+            case GRAY_SHULKER_BOX:
+            case BLACK_SHULKER_BOX:
+            case BROWN_SHULKER_BOX:
+            case RED_SHULKER_BOX:
+            case ORANGE_SHULKER_BOX:
+            case YELLOW_SHULKER_BOX:
+            case LIME_SHULKER_BOX:
+            case GREEN_SHULKER_BOX:
+            case CYAN_SHULKER_BOX:
+            case LIGHT_BLUE_SHULKER_BOX:
+            case BLUE_SHULKER_BOX:
+            case PURPLE_SHULKER_BOX:
+            case MAGENTA_SHULKER_BOX:
+            case PINK_SHULKER_BOX:
+                return true;
+            default:
+                return false;
         }
     }
 
